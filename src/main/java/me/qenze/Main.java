@@ -1,6 +1,6 @@
 package me.qenze;
 
-public class Main{
+public class Main {
     public static void main(String[] args) {
         new MainFrame();
     }

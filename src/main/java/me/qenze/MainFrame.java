@@ -37,7 +37,7 @@ public class MainFrame extends JFrame {
         if (chart != null) remove(chart);
         chart = new ChartPanel(r0, a, new double[]{minDegree, maxDegree}, step,
                 Math.min(getWidth(), getWidth()),
-                Math.min(getHeight()-valuesPanel.getHeight(), getHeight()-valuesPanel.getHeight()));
+                Math.min(getHeight() - valuesPanel.getHeight(), getHeight() - valuesPanel.getHeight()));
         add(chart, BorderLayout.CENTER);
         revalidate();
         repaint();
@@ -54,7 +54,10 @@ public class MainFrame extends JFrame {
                 minDegree = Double.parseDouble(minDegreeField.getText());
                 maxDegree = Double.parseDouble(maxDegreeField.getText());
                 step = Double.parseDouble(stepField.getText());
-                if(step<=0 || minDegree<0 || maxDegree>360) throw new NumberFormatException();
+                if (step <= 0
+                        || minDegree < 0
+                        || maxDegree > 360
+                        || minDegree > maxDegree) throw new NumberFormatException();
                 addChart();
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Input values are incorrect", "Error", JOptionPane.ERROR_MESSAGE);
