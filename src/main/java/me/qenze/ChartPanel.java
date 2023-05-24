@@ -91,7 +91,6 @@ public class ChartPanel extends JPanel {
 
         try {
             ImageIO.write(image, "png", new File("src/main/resources/image.png"));
-            System.out.println("Image saved successfully to " + "src/main/resources/image.png");
         } catch (IOException e) {
             System.out.println("Error saving image: " + e.getMessage());
         }
